@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
+import ImgPicker from '../components/ImgPicker';
 
 const HomePage = (props) => {
   return (
@@ -12,19 +13,14 @@ const HomePage = (props) => {
         simplement en les photographiant avec votre smartphone. Essayez de
         pointer votre appareil photo vers l'étiquette.
       </Text>
-      <Button
-        title="Camera"
-        onPress={() => console.log('pressed camera nuttion')}
-      >
-        ICON
-      </Button>
+      <ImgPicker />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: 'yellow',
+    backgroundColor: '#FFF8DC',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',

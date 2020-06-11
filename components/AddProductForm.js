@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, ScrollView } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  ScrollView,
+  Button,
+} from 'react-native';
+import AddPlaceForm from './AddPlaceForm';
 
 const AddProductForm = () => {
   const [name, setName] = useState('');
@@ -8,11 +16,13 @@ const AddProductForm = () => {
   const [sellingPrice, setSellingPrice] = useState('');
   const [annee, setAnnee] = useState('');
 
-  const changeNameHandler = (val) => {
-    if (val.trim().length === 0) {
+  const changeNameHandler = () => {
+    console.log('on blur event:::::');
+    if (name.trim().length === 0) {
       setNameIsValid(false);
+    } else {
+      setNameIsValid(true);
     }
-    setName(val);
   };
 
   return (
@@ -23,12 +33,12 @@ const AddProductForm = () => {
           <TextInput
             style={styles.input}
             value={name}
-            onChangeText={changeNameHandler}
-            onBlur={() => console.log('text bluredddddd')}
+            onChangeText={(val) => setName(val)}
+            onBlur={changeNameHandler}
           ></TextInput>
           {!nameIsValid && <Text>Merci d'entrer un nom valide</Text>}
         </View>
-
+        <AddPlaceForm />
         <View style={styles.formControl}>
           <Text style={styles.label}>prix d'achat</Text>
           <TextInput
@@ -57,6 +67,9 @@ const AddProductForm = () => {
           ></TextInput>
         </View>
       </View>
+      <View>
+        <Button title="enregistrer" />
+      </View>
     </ScrollView>
     // lieu
   );
@@ -65,7 +78,7 @@ const AddProductForm = () => {
 const styles = StyleSheet.create({
   formControl: {},
   label: {},
-  input: {},
+  input: { borderBottomWidth: 1, borderBottomColor: 'grey' },
   form: {},
 });
 

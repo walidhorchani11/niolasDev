@@ -15,9 +15,9 @@ const AddProductForm = () => {
   const [buyingPrice, setBuyingPrice] = useState('');
   const [sellingPrice, setSellingPrice] = useState('');
   const [annee, setAnnee] = useState('');
+  const [volume, setVolume] = useState('');
 
   const changeNameHandler = () => {
-    console.log('on blur event:::::');
     if (name.trim().length === 0) {
       setNameIsValid(false);
     } else {
@@ -63,7 +63,15 @@ const AddProductForm = () => {
             style={styles.input}
             value={annee}
             onChangeText={(val) => setAnnee(val)}
-            keyboardType=""
+          ></TextInput>
+        </View>
+        <View style={styles.formControl}>
+          <Text style={styles.label}>Volume</Text>
+          <TextInput
+            style={styles.input}
+            value={annee}
+            onChangeText={(val) => setVolume(val)}
+            keyboardType="numeric"
           ></TextInput>
         </View>
       </View>

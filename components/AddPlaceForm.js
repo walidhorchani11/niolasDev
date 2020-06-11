@@ -4,15 +4,17 @@ import { View, Text, TextInput, StyleSheet, Button } from 'react-native';
 const AddPlaceForm = (props) => {
   const [places, setPlaces] = useState([0]);
 
+  const addPlaceInputHandler = () => {
+    console.log('add polace handler putted ...');
+    setPlaces((currentPlaces) => [...currentPlaces, 0]);
+    console.log('after add:::/', places);
+  };
+
   const displayPlacesInput = () => {
     return places.map((place, indice) => (
       <View key={indice}>
         <Text style={styles.label}>{`Lieu ${indice + 1}`}</Text>
-        <TextInput
-          style={styles.input}
-          value={places[indice]}
-          onChangeText={(val) => {}}
-        ></TextInput>
+        <TextInput style={styles.input} value={places[indice]}></TextInput>
       </View>
     ));
   };
@@ -20,7 +22,7 @@ const AddPlaceForm = (props) => {
   return (
     <View style={styles.formControl}>
       {displayPlacesInput()}
-      <Button title="ajouter lieu" />
+      <Button title="ajouter lieu" onPress={addPlaceInputHandler} />
     </View>
   );
 };

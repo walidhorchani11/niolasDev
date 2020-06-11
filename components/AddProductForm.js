@@ -3,9 +3,18 @@ import { View, Text, TextInput, StyleSheet, ScrollView } from 'react-native';
 
 const AddProductForm = () => {
   const [name, setName] = useState('');
+  const [nameIsValid, setNameIsValid] = useState(true);
   const [buyingPrice, setBuyingPrice] = useState('');
   const [sellingPrice, setSellingPrice] = useState('');
   const [annee, setAnnee] = useState('');
+
+  const changeNameHandler = (val) => {
+    if (val.trim().length === 0) {
+      setNameIsValid(false);
+    }
+    setName(val);
+  };
+
   return (
     <ScrollView>
       <View style={styles.form}>
@@ -14,9 +23,10 @@ const AddProductForm = () => {
           <TextInput
             style={styles.input}
             value={name}
-            onChangeText={(val) => setName(val)}
-            returnKeyType="search"
+            onChangeText={changeNameHandler}
+            onBlur={() => console.log('text bluredddddd')}
           ></TextInput>
+          {!nameIsValid && <Text>Merci d'entrer un nom valide</Text>}
         </View>
 
         <View style={styles.formControl}>

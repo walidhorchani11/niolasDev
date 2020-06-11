@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Button } from 'react-native';
 
-const AddPlaceForm = (props) => {
+const AddPlaceForm = () => {
   const [places, setPlaces] = useState([0]);
 
   const addPlaceInputHandler = () => {
-    console.log('add polace handler putted ...');
     setPlaces((currentPlaces) => [...currentPlaces, 0]);
-    console.log('after add:::/', places);
   };
 
   const displayPlacesInput = () => {
     return places.map((place, indice) => (
       <View key={indice}>
         <Text style={styles.label}>{`Lieu ${indice + 1}`}</Text>
-        <TextInput style={styles.input} value={places[indice]}></TextInput>
+        <TextInput
+          style={styles.input}
+          placeholder={place.toString()}
+          value={place}
+          keyboardType="numeric"
+          onChangeText={(val) => {
+            const newPlaces = places;
+            newPlaces[indice] = val * 1;
+            setPlaces(newPlaces);
+          }}
+        ></TextInput>
       </View>
     ));
   };

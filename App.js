@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import HomePage from './components/HomePage';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import Home from './screens/Home';
 
 export default function App() {
-  const [homePage, setHomePage] = useState(true);
-  return <View style={styles.container}>{homePage && <HomePage />}</View>;
+  return (
+    <View style={styles.container}>
+      <Home />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'green',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import ImgPicker from '../components/ImgPicker';
 
-const HomePage = (props) => {
+const Home = () => {
   return (
     <View style={styles.screen}>
       <View>
@@ -20,7 +20,6 @@ const HomePage = (props) => {
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: '#FFF8DC',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -28,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomePage;
+export default Home;

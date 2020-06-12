@@ -1,10 +1,14 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Button } from 'react-native';
 
-const ManageProductScreen = () => {
+const ManageProductScreen = (props) => {
   return (
     <View style={styles.screen}>
       <Text>Screen for adding & deleting product</Text>
+      <Button
+        title="Go to form"
+        onPress={() => this.props.navigation.navigate('AddProductForm')}
+      />
     </View>
   );
 };

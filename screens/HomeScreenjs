@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Button } from 'react-native';
 import ImgPicker from '../components/ImgPicker';
 
-const HomeScreen = () => {
+const HomeScreen = (props) => {
   return (
     <View style={styles.screen}>
       <View>
@@ -13,6 +13,10 @@ const HomeScreen = () => {
         simplement en les photographiant avec votre smartphone. Essayez de
         pointer votre appareil photo vers l'étiquette.
       </Text>
+      <Button
+        title="Go to manage product"
+        onPress={() => this.props.navigation.navigate('ManageProduct')}
+      />
       <ImgPicker />
     </View>
   );

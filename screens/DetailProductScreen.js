@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-const AddProductFormScreen = () => {
+const AddProductFormScreen = (props) => {
   return (
     <View style={styles.screen}>
       <Text>form to add product</Text>

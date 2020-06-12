@@ -14,7 +14,7 @@ const AddProductForm = () => {
   const [nameIsValid, setNameIsValid] = useState(true);
   const [buyingPrice, setBuyingPrice] = useState('');
   const [sellingPrice, setSellingPrice] = useState('');
-  const [annee, setAnnee] = useState('');
+  const [year, setYear] = useState('');
   const [volume, setVolume] = useState('');
 
   const changeNameHandler = () => {
@@ -61,15 +61,15 @@ const AddProductForm = () => {
           <Text style={styles.label}>Annee</Text>
           <TextInput
             style={styles.input}
-            value={annee}
-            onChangeText={(val) => setAnnee(val)}
+            value={year}
+            onChangeText={(val) => setYear(val)}
           ></TextInput>
         </View>
         <View style={styles.formControl}>
           <Text style={styles.label}>Volume</Text>
           <TextInput
             style={styles.input}
-            value={annee}
+            value={volume}
             onChangeText={(val) => setVolume(val)}
             keyboardType="numeric"
           ></TextInput>

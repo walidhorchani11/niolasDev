@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-const ManageProductScree = () => {
+const ManageProductScreen = () => {
   return (
     <View style={styles.screen}>
       <Text>Screen for adding & deleting product</Text>
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ManageProductScree;
+export default ManageProductScreen;

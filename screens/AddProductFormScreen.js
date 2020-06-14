@@ -1,14 +1,14 @@
 import React from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet, Button } from 'react-native';
+import AddProductForm from '../components/productForm/AddProductForm';
 
 const DetailProductScreen = (props) => {
+  const navigateTo = (screen) => {
+    props.navigation.navigate(screen);
+  };
   return (
     <View style={styles.screen}>
-      <Text>form </Text>
-      <Button
-        title="Go to information"
-        onPress={() => props.navigation.navigate('DetailProduct')}
-      />
+      <AddProductForm navigateTo={navigateTo} />
     </View>
   );
 };

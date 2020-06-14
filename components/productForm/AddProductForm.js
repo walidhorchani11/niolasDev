@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import AddPlaceForm from './AddPlaceForm';
 
-const AddProductForm = () => {
+const AddProductForm = (props) => {
   const [name, setName] = useState('');
   const [nameIsValid, setNameIsValid] = useState(true);
   const [buyingPrice, setBuyingPrice] = useState('');
@@ -76,7 +76,10 @@ const AddProductForm = () => {
         </View>
       </View>
       <View>
-        <Button title="enregistrer" />
+        <Button
+          title="enregistrer"
+          onPress={() => props.navigateTo('DetailProduct')}
+        />
       </View>
     </ScrollView>
     // lieu

@@ -1,8 +1,15 @@
 import React from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import ImgPicker from '../components/ImgPicker';
 
 const HomeScreen = (props) => {
+  const navigateTo = (screen, imageLink) => {
+    console.log(
+      'lien vers image passe par ImagePicker to homeScreen',
+      imageLink
+    );
+    props.navigation.navigate(screen, { imageLink: imageLink });
+  };
   return (
     <View style={styles.screen}>
       <View>
@@ -13,11 +20,7 @@ const HomeScreen = (props) => {
         simplement en les photographiant avec votre smartphone. Essayez de
         pointer votre appareil photo vers l'étiquette.
       </Text>
-      <Button
-        title="Go to manage product"
-        onPress={() => this.props.navigation.navigate('ManageProduct')}
-      />
-      <ImgPicker />
+      <ImgPicker navigateTo={navigateTo} />
     </View>
   );
 };

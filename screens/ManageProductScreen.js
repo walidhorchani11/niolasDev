@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Button, Image } from 'react-native';
 
 const ManageProductScreen = (props) => {
   return (
@@ -7,8 +7,14 @@ const ManageProductScreen = (props) => {
       <Text>Screen for adding & deleting product</Text>
       <Button
         title="Go to form"
-        onPress={() => this.props.navigation.navigate('AddProductForm')}
+        onPress={() => props.navigation.navigate('AddProductForm')}
       />
+      {props.navigation.state.params && (
+        <Image
+          source={{ uri: props.navigation.state.params.imageLink }}
+          style={{ width: 200, height: 200 }}
+        />
+      )}
     </View>
   );
 };

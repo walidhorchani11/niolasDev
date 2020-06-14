@@ -4,10 +4,6 @@ import ImgPicker from '../components/ImgPicker';
 
 const HomeScreen = (props) => {
   const navigateTo = (screen, imageLink) => {
-    console.log(
-      'lien vers image passe par ImagePicker to homeScreen',
-      imageLink
-    );
     props.navigation.navigate(screen, { imageLink: imageLink });
   };
   return (

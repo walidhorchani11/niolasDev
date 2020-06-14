@@ -4,10 +4,10 @@ import { Text, View, StyleSheet, Button } from 'react-native';
 const DetailProductScreen = (props) => {
   return (
     <View style={styles.screen}>
-      <Text>information of product</Text>
+      <Text>form </Text>
       <Button
         title="Go to information"
-        onPress={() => this.props.navigation.navigate('DetailProduct')}
+        onPress={() => props.navigation.navigate('DetailProduct')}
       />
     </View>
   );

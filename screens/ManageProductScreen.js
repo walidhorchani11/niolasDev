@@ -4,17 +4,20 @@ import { Text, View, StyleSheet, Button, Image } from 'react-native';
 const ManageProductScreen = (props) => {
   return (
     <View style={styles.screen}>
-      <Text>Screen for adding & deleting product</Text>
-      <Button
-        title="Go to form"
-        onPress={() => props.navigation.navigate('AddProductForm')}
-      />
       {props.navigation.state.params && (
         <Image
           source={{ uri: props.navigation.state.params.imageLink }}
-          style={{ width: 200, height: 200 }}
+          style={styles.image}
         />
       )}
+      <View>
+        <Button
+          style={styles.button}
+          title="ajouter reference"
+          onPress={() => props.navigation.navigate('AddProductForm')}
+        />
+        <Button style={styles.button} title="retirer reference" />
+      </View>
     </View>
   );
 };
@@ -23,9 +26,15 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     padding: 20,
   },
+  image: {
+    backgroundColor: 'white',
+    width: 200,
+    height: 200,
+  },
+  button: {},
 });
 
 export default ManageProductScreen;

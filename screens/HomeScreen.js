@@ -2,7 +2,10 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import ImgPicker from '../components/ImgPicker';
 
-const Home = () => {
+const HomeScreen = (props) => {
+  const navigateTo = (screen, imageLink) => {
+    props.navigation.navigate(screen, { imageLink: imageLink });
+  };
   return (
     <View style={styles.screen}>
       <View>
@@ -13,7 +16,7 @@ const Home = () => {
         simplement en les photographiant avec votre smartphone. Essayez de
         pointer votre appareil photo vers l'étiquette.
       </Text>
-      <ImgPicker />
+      <ImgPicker navigateTo={navigateTo} />
     </View>
   );
 };
@@ -27,4 +30,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default HomeScreen;

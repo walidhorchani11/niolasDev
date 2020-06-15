@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, ImageBackground } from 'react-native';
+import { Text, View, StyleSheet, ImageBackground, Image } from 'react-native';
 import ImgPicker from '../components/ImgPicker';
 
 const HomeScreen = (props) => {
@@ -12,13 +12,17 @@ const HomeScreen = (props) => {
       style={styles.screen}
     >
       <View>
-        <Text>LOGO</Text>
+        <Image
+          source={require('../assets/img/logoNicolas.png')}
+          style={{ width: 138, height: 119 }}
+        />
       </View>
       <Text
         style={{
           fontFamily: 'OpenSans-Regular',
           fontSize: 16,
           color: 'white',
+          textAlign: 'center',
         }}
       >
         Bienvenue ! Nicolas identifie les étiquettes de vos bouteilles de vin.

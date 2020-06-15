@@ -14,10 +14,14 @@ const HomeScreen = (props) => {
       <View>
         <Text>LOGO</Text>
       </View>
-      <Text>
-        Bienvenue ! Nicolas identifie les étiquettes de vos bouteilles de vin
-        simplement en les photographiant avec votre smartphone. Essayez de
-        pointer votre appareil photo vers l'étiquette.
+      <Text
+        style={{
+          fontFamily: 'OpenSans-Regular',
+          fontSize: 16,
+          color: 'white',
+        }}
+      >
+        Bienvenue ! Nicolas identifie les étiquettes de vos bouteilles de vin.
       </Text>
       <ImgPicker navigateTo={navigateTo} />
     </ImageBackground>
@@ -29,7 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
-    padding: 20,
+    paddingHorizontal: 30,
     backgroundColor: 'yellow',
   },
 });

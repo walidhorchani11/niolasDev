@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, ImageBackground } from 'react-native';
 import ImgPicker from '../components/ImgPicker';
 
 const HomeScreen = (props) => {
@@ -7,7 +7,10 @@ const HomeScreen = (props) => {
     props.navigation.navigate(screen, { imageLink: imageLink });
   };
   return (
-    <View style={styles.screen}>
+    <ImageBackground
+      source={require('../assets/img/bgImage.png')}
+      style={styles.screen}
+    >
       <View>
         <Text>LOGO</Text>
       </View>
@@ -17,7 +20,7 @@ const HomeScreen = (props) => {
         pointer votre appareil photo vers l'étiquette.
       </Text>
       <ImgPicker navigateTo={navigateTo} />
-    </View>
+    </ImageBackground>
   );
 };
 
@@ -27,6 +30,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     padding: 20,
+    backgroundColor: 'yellow',
   },
 });
 

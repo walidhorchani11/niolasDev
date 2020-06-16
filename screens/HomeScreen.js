@@ -11,22 +11,16 @@ const HomeScreen = (props) => {
       source={require('../assets/img/bgImage.png')}
       style={styles.screen}
     >
-      <View>
+      <View style={styles.descriptionContainer}>
         <Image
           source={require('../assets/img/logoNicolas.png')}
-          style={{ width: 138, height: 119 }}
+          style={styles.logo}
         />
+
+        <Text style={styles.textDescription}>
+          Bienvenue ! Nicolas identifie les étiquettes de vos bouteilles de vin.
+        </Text>
       </View>
-      <Text
-        style={{
-          fontFamily: 'OpenSans-Regular',
-          fontSize: 16,
-          color: 'white',
-          textAlign: 'center',
-        }}
-      >
-        Bienvenue ! Nicolas identifie les étiquettes de vos bouteilles de vin.
-      </Text>
       <ImgPicker navigateTo={navigateTo} />
     </ImageBackground>
   );
@@ -38,7 +32,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     paddingHorizontal: 30,
-    backgroundColor: 'yellow',
+  },
+  descriptionContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  textDescription: {
+    fontFamily: 'OpenSans-Regular',
+    fontSize: 16,
+    color: '#FFFFFF',
+    textAlign: 'center',
+    marginVertical: 30,
+  },
+  logo: {
+    width: 138,
+    height: 119,
   },
 });
 

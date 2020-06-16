@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
   textDescription: {
     fontFamily: 'OpenSans-Regular',
     fontSize: 16,
+    fontWeight: 'bold',
     color: '#FFFFFF',
     textAlign: 'center',
     marginVertical: 30,

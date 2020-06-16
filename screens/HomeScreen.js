@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, ImageBackground, Image } from 'react-native';
 import ImgPicker from '../components/ImgPicker';
 
 const HomeScreen = (props) => {
@@ -7,17 +7,22 @@ const HomeScreen = (props) => {
     props.navigation.navigate(screen, { imageLink: imageLink });
   };
   return (
-    <View style={styles.screen}>
-      <View>
-        <Text>LOGO</Text>
+    <ImageBackground
+      source={require('../assets/img/bgImage.png')}
+      style={styles.screen}
+    >
+      <View style={styles.descriptionContainer}>
+        <Image
+          source={require('../assets/img/logoNicolas.png')}
+          style={styles.logo}
+        />
+
+        <Text style={styles.textDescription}>
+          Bienvenue ! Nicolas identifie les étiquettes de vos bouteilles de vin.
+        </Text>
       </View>
-      <Text>
-        Bienvenue ! Nicolas identifie les étiquettes de vos bouteilles de vin
-        simplement en les photographiant avec votre smartphone. Essayez de
-        pointer votre appareil photo vers l'étiquette.
-      </Text>
       <ImgPicker navigateTo={navigateTo} />
-    </View>
+    </ImageBackground>
   );
 };
 
@@ -26,7 +31,24 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
-    padding: 20,
+    paddingHorizontal: 30,
+  },
+  descriptionContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  textDescription: {
+    fontFamily: 'OpenSans-Regular',
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    textAlign: 'center',
+    marginVertical: 30,
+  },
+  logo: {
+    width: 138,
+    height: 119,
   },
 });
 

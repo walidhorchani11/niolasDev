@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, View } from 'react-native';
+import { Button, View, Image, TouchableOpacity } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
 const ImgPicker = (props) => {
@@ -24,9 +24,17 @@ const ImgPicker = (props) => {
   };
 
   return (
-    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-      <Button title="Camera" onPress={pickImage} />
-    </View>
+    <TouchableOpacity
+      onPress={pickImage}
+      style={{
+        borderRadius: 40,
+      }}
+    >
+      <Image
+        source={require('../assets/img/iconCamera.png')}
+        style={{ width: 90, height: 90 }}
+      />
+    </TouchableOpacity>
   );
 };
 
